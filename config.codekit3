@@ -48,12 +48,12 @@
       "sC" : 3,
       "tS" : 0
     },
-    "\/dev\/content\/DevilSVG.kit" : {
+    "\/dev\/content\/LogoSVG.kit" : {
       "cB" : 0,
       "ft" : 2048,
       "hM" : 0,
       "oA" : 1,
-      "oAP" : "\/dev\/content\/DevilSVG.html",
+      "oAP" : "\/dev\/content\/LogoSVG.html",
       "oF" : 0
     },
     "\/dev\/global\/head.kit" : {
@@ -336,7 +336,7 @@
   },
   "projectAttributes" : {
     "creationDate" : 649104598.99548197,
-    "displayValue" : "LogoReveal",
+    "displayValue" : "Logo Reveal",
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-glace",
     "iconImageWasSetByUser" : 0
