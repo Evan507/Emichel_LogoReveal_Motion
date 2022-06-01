@@ -26,7 +26,7 @@ logoanim
 .from("#BirdFlying", {x: -300, y: -500, duration:4}, "arrival")
 .to("#BirdFlying", {delay:0, duration:0.05, opacity: 0}, "standup")
 .from("#Bird" ,{delay:0, duration:0.05, opacity: 0}, "standup")
-// .to("#eye", {delay:3, duration: 2, morphSVG:"#blink"}, "blink1")
+.to("#eye", {delay:3, duration: 2, morphSVG:"#blink"}, "blink1")
 .to("#Bird", {delay:0, x:500, duration: 13, ease: "back.out(1)"}, "moveRight1")
 .to("#Helmet", {delay:0, x:500, duration: 13, ease: "back.out(1)"}, "moveRight1")
 .from("#Splash1", {delay:0.2, opacity:0}, "moveRight1" )
