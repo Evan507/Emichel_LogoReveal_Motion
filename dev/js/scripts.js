@@ -27,10 +27,12 @@ logoanim
 .to("#awing", {opacity:0, delay:0, duration:0.05})
 .to("#BirdFlying", {delay:0, duration:0.05, opacity: 0}, "standup")
 .from("#Bird" ,{delay:0, duration:0.05, opacity: 0}, "standup")
+
 // .to("#eye", {delay:3, duration: 2, morphSVG:"#blink"}, "blink1")
 .to("#Bird", {delay:1.5, x:480, duration: 13, ease: "back.out(1)"}, "moveRight1")
 .to("#Helmet", {delay:1.5, x:480, duration: 13, ease: "back.out(1)"}, "moveRight1")
-.add(forwardsplashes(), "moveRight1" )
+.add(motionoftheocean(), "moveRight1")
+// .add(forwardsplashes(), "moveRight1" )
 // .from("#RightSplash", {delay:0.1, opacity:0}, "moveRight1" )
 // .to("#RightSplash", {delay:1, opacity:0}, "moveRight1")
 // .from("#RightSplash", {delay: 4, opacity:0}, "moveRight1")
@@ -60,19 +62,33 @@ logoanim
 ;
 
 
-function forwardsplashes(){
-    let tl = gsap.timeline ({});
+// function forwardsplashes(){
+//     let tl = gsap.timeline ({});
 
-    tl
+//     tl
 
-    .from("#RightSplash", {delay:1.6, opacity:0}, "splash1a" )
-.to("#RightSplash", {delay:1.8, opacity:0}, "splash1a")
-.to("#RightSplash", {delay: 3, opacity:100}, "splash1b")
-.to("#RightSplash", {delay:3.2, opacity:0}, "splash1b")
+//     .from("#RightSplash", {delay:1.6, opacity:0}, "splash1a" )
+// .to("#RightSplash", {delay:1.8, opacity:0}, "splash1a")
+// .to("#RightSplash", {delay: 3, opacity:100}, "splash1b")
+// .to("#RightSplash", {delay:3.2, opacity:0}, "splash1b")
 
-return tl; 
+// return tl; 
+
+// }
+
+function motionoftheocean(){
+    let tl = gsap.timeline ({repeat:-1});
+
+    tl 
+    .to("#Waves", {delay:0, duration: 2, morphSVG:"#WavesReverse"}, "tide1")
+    .to("#WaveMask", {delay:0, duration: 2, morphSVG:"#WaveMask2"}, "tide1")
+    .to("#Waves", {delay:0, duration: 2, morphSVG:"#Waves"}, "tide2")
+    .to("#WaveMask", {delay:0, duration: 2, morphSVG:"WaveMask"}, "tide2")
 
 }
+
+gsap.set("#WavesReverse", {opacity:0})
+gsap.set("#WaveMask2", {opacity:0})
 
 // function birdswap(){
 
