@@ -27,20 +27,29 @@ logoanim
 .to("#awing", {opacity:0, delay:0, duration:0.05})
 .to("#BirdFlying", {delay:0, duration:0.05, opacity: 0}, "standup")
 .from("#Bird" ,{delay:0, duration:0.05, opacity: 0}, "standup")
-
+.from("#blink" , {delay:1, duration: 0, opacity:0}, "blinking1")
+.to("#eye" , {delay:1, duration: 0, opacity:0}, "blinking1")
+.to("#blink" , {delay:0.1, duration: 0, opacity:0}, "blinking2")
+.to("#eye" , {delay:0.1, duration: 0, opacity:100}, "blinking2")
+.to("#blink", {delay:0.1, duration: 0, opacity:100}, "blinking3")
+.to("#eye" , {delay:0.1, duration: 0, opacity:0}, "blinking3")
+.to("#blink", {delay:0.1, duration: 0, opacity:0}, "blinking4")
+.to("#eye" , {delay:0.1, duration: 0, opacity:100}, "blinking4")
 // .to("#eye", {delay:3, duration: 2, morphSVG:"#blink"}, "blink1")
-.to("#Bird", {delay:1.5, x:480, duration: 13, ease: "back.out(1)"}, "moveRight1")
-.to("#Helmet", {delay:1.5, x:480, duration: 13, ease: "back.out(1)"}, "moveRight1")
+.to("#Bird", {delay:1.5, x:480, duration: 7, ease: "none"}, "moveRight1")
+.to("#Helmet", {delay:1.5, x:480, duration: 7, ease: "none"}, "moveRight1")
 .add(motionoftheocean(), "moveRight1")
 // .add(forwardsplashes(), "moveRight1" )
 // .from("#RightSplash", {delay:0.1, opacity:0}, "moveRight1" )
 // .to("#RightSplash", {delay:1, opacity:0}, "moveRight1")
 // .from("#RightSplash", {delay: 4, opacity:0}, "moveRight1")
 // .to("#RightSplash", {delay:5, opacity:0}, "moveRight1")
-.to("#Bird", {delay:"none", x:20, duration: 13, ease: "back.out(1)"}, "moveLeft1")
-.to("#Helmet", {delay:0, x:20, duration: 13, ease: "back.out(1)"}, "moveLeft1")
-.from("#LeftSplash", {delay:1.5, opacity:0}, "moveLeft1" )
-.to("#LeftSplash", {delay:2, opacity:0}, "moveLeft1")
+.from("#Birdreverse", {opacity:0, duration: 0.01, delay:0}, "flipit")
+.to("#Bird", {opacity:0, duration: 0.01, delay:0}, "flipit")
+.to("#Bird", {delay:"none", x:20, duration: 7, ease: "none"}, "moveLeft1")
+.to("#Helmet", {delay:0, x:20, duration: 7, ease: "none"}, "moveLeft1")
+.to("#Birdreverse", {opacity:0, duration: 0.01, delay:0}, "flipit2")
+.to("#Bird", {opacity:100, duration: 0.01, delay:0}, "flipit2")
 .to("#Bird", {delay:0, x:250, duration: 7, ease: "back.out(1)"}, "moveRight2")
 .to("#Helmet", {delay:0, x:250, duration: 7, ease: "back.out(1)"}, "moveRight2")
 .to("#Bird", {delay:0, y:-250, duration: 7}, "moveUp")
@@ -77,14 +86,19 @@ logoanim
 // }
 
 function motionoftheocean(){
-    let tl = gsap.timeline ({repeat:-1});
+    let tidel = gsap.timeline ({repeat:3});
 
-    tl 
-    .to("#Waves", {delay:0, duration: 2, morphSVG:"#WavesReverse"}, "tide1")
-    .to("#WaveMask", {delay:0, duration: 2, morphSVG:"#WaveMask2"}, "tide1")
-    .to("#Waves", {delay:0, duration: 2, morphSVG:"#Waves"}, "tide2")
-    .to("#WaveMask", {delay:0, duration: 2, morphSVG:"WaveMask"}, "tide2")
+    tidel
+    .to("#Waves", {delay:0, duration: 3, morphSVG:"#WavesReverse"}, "tide1")
+    .to("#WaveMask", {delay:0, duration: 3, morphSVG:"#WaveMask2"}, "tide1")
 
+    .to("#Waves", {delay:0, duration: 3, morphSVG:"#Waves"}, "tide2")
+
+    .to("#WaveMask", {delay:0, duration: 3, morphSVG:"#WaveMask"}, "tide2")
+
+    // .from("#WaveMask2", {delay:0, duration: 2, morphSVG:"#Waves"}, "tide2")
+
+ ;
 }
 
 gsap.set("#WavesReverse", {opacity:0})
